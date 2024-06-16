@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBN-uad5XSNGeJw55Ok1FFCsVD6ezVmLO0",
-  authDomain: "qrimage-96a02.firebaseapp.com",
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
   projectId: "qrimage-96a02",
-  storageBucket: "qrimage-96a02.appspot.com",
-  messagingSenderId: "59887867009",
-  appId: "1:59887867009:web:dc558e7caff401e6b06980"
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_SENDERID,
+  appId:process.env.REACT_APP_APPID
 };
 
 // Initialize Firebase

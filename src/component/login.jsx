@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import image from '../scanImage.jpeg';
-//import '../App.css';
-let code = '1234';
+
 export default function Login({setAuthentication, error, setError}){
     const [userData, setUserData] = useState('');
 
     function handleClick(){
-      if(code==userData) {
+      console.log(process.env.REACT_APP_CODE);
+      if(process.env.REACT_APP_CODE === userData) {
         setAuthentication(true)
         setError('')
       }else{
