@@ -1,14 +1,11 @@
 import {useState, useRef} from 'react';
 import {imageDb} from './Config';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import {v4} from 'uuid';
 import QRCodeFromImage from '../qrFromImage/qrFromImage';
 
-export default function FireBaseImageUpload(){
+export default function FireBaseImageUpload({error,errorClass,setErrorClass, setError}){
   const inputRef = useRef('')
   const [imgURL, setImgURL] = useState('');
-  const [error, setError] = useState('')
-  const [errorClass, setErrorClass] = useState('');
   const [userInput, setUserInput] = useState('');
   const childStateRef = useRef();
 
@@ -32,7 +29,7 @@ export default function FireBaseImageUpload(){
   }
   
   const manageFileUpload = () =>{
-    const imgRef = ref(imageDb, `files/${v4()}`)
+    const imgRef = ref(imageDb, `files/${userInput}`)
     uploadBytes(imgRef,inputRef.current.files[0]).then((value)=>{
        getDownloadURL(value.ref).then((url)=>{
         setImgURL(url)
@@ -41,22 +38,27 @@ export default function FireBaseImageUpload(){
     }).catch((error)=>{ console.log(error); throw new Error("Problem in uploading file", error.code)})
   }
 
-  const handleClick = ()=>{
-    hasExtension(inputRef.current.value)
+  const handleClick = (e)=>{
+    console.log(userInput);
+    if(userInput !== ''){
+      e.preventDefault()
+      hasExtension(inputRef.current.value)
+    }
   }
     
   return (
     <>
-      <h1>Generate your own QR Code!</h1>
       <div className="main_container">
         <section className={`input-group ${errorClass}`}>
           <input type="file" id="upload-files" ref={inputRef} onClick={handleUserClick}/>
           {error && <p className='error'>*{error}</p>}
+          <form>
           <div className='user-input' value={userInput} onChange={(e)=>{ setUserInput(e.target.value)}}>
           <label>Add something for Title: </label>
-          <input type='text' placeholder='Add something for Title'/>
+          <input type='text' placeholder='Add something for Title' required/>
           </div>
           <button className='button button-space' onClick={handleClick}>Generate QR</button>
+          </form>
         </section>
         
         <section>

@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.main_container{
+.main_container, .login-container{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -25,7 +25,7 @@
   overflow: hidden;
 }
 
-section{
+section.home-section{
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -60,19 +60,17 @@ section{
   font-size: x-small;
 }
 .error {
-  background-color: #fce4e4;
-  border: 1px solid #fcc2c3;
+  /* background-color: #fce4e4;
+  border: 1px solid #fcc2c3; */
   border-radius: 7px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  display: inline;
+  display: block;
   color: #cc0033;
-  float: left;
+  /* float: left; */
   font-weight: bold;
-  line-height: 24px;
-  position: relative;
+  /* line-height: 24px;
+  position: relative; */
   padding: 7px 11px 4px;
-  margin-left: 17px;
+  margin-left: 160px;
    /* Left Arrow Styling Starts Here */
   &:after, &:before {
     content: '';
@@ -177,7 +175,29 @@ input[type=text]:focus{
 
 .download-button{
   margin-top: 20px;
-  background-color: #555;
+}
+.login-auth-box,.login-image-section{
+  width: 50%;
+  height: 60%;
+}
+
+
+.login-image-section > #login-side-image{
+ width: 100%;
+ height: 100%;
+}
+.login-container{
+ background-color: white;
+ color: black;
+}
+.login-button{
+  font: 15px;
+  border: none;
+  background-color: #2A629A;
+  color: white;
+  width: 20%;
+  height: 30px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 860px) {
@@ -200,6 +220,9 @@ input[type=text]:focus{
   }
   .button-space{
     margin-top: auto;
+  }
+  input[type="text"]:focus{
+    font-size: 25px;
   }
 
 }

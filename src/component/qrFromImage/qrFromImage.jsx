@@ -1,6 +1,7 @@
 import QRCode from 'qrcode'
 import { useEffect, useState, useRef,forwardRef,useImperativeHandle } from 'react'
 import {toPng} from 'html-to-image';
+import JsPDF from "jspdf";
 
 const QRCodeFromImage = forwardRef(({imageData, userInput}, _ref) => {
   const [qrImage, setQRImage] = useState('')
@@ -8,17 +9,17 @@ const QRCodeFromImage = forwardRef(({imageData, userInput}, _ref) => {
 
   const handleDownloadImage = ()=>{
     const element = document.getElementById('screenshot')
-    console.log(element);
     if(!element){
       return;
     }
       toPng(downloadTagRef.current, { cacheBust: false })
         .then((dataUrl) => {
-          console.log(dataUrl);
-          const link = document.createElement("a");
-          link.download = "my-image-name.png";
-          link.href = dataUrl;
-          link.click();
+          const doc = new JsPDF("p", "mm", "a4");
+          doc.addImage(dataUrl,"PNG", 35, 40, 150, 170)
+          doc.save(`${userInput}.pdf`);
+          const blobPDF = doc.output("blob",`${userInput}.pdf`);
+          const blobUrl = URL.createObjectURL(blobPDF);
+          window.open(blobUrl)
         })
         .catch((err) => {
           console.log(err);
@@ -38,15 +39,17 @@ const QRCodeFromImage = forwardRef(({imageData, userInput}, _ref) => {
         dark: '#FFFAF4',
         light: '#0000' 
       }
-  }, (err, qrURL) => {
-      if (err) return console.error(err)
-      setQRImage(qrURL)
+  }, function(err, qrURL){
+      // if (err) {
+      //    throw err
+      // }
+      setQRImage(qrURL);
   })
   },[imageData])
 
   return (
     <div>
-    <section>
+    <section className='home-section'>
         <div id='screenshot' ref={downloadTagRef} >
         {qrImage ?<>
         <img src={qrImage} alt="img"/>
