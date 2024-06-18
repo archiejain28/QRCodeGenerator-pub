@@ -25,7 +25,6 @@ export default function Login({setAuthentication, error, setError}){
         setError('')
       }else{
         setError('Incorrect Password')
-        document.getElementById('user-input').style.marginTop='30px'
       }     
     }
 
@@ -49,13 +48,14 @@ export default function Login({setAuthentication, error, setError}){
               value={userData}
               onChange={(e) => setUserData(e.target.value)}
             />
-            {error && <p className="error">*{error}</p>}
-            </div>
             {userData && (
-              <span toggle="#password-field" onClick={handlePasswordToggle}>
+              <span id="#password-field" onClick={handlePasswordToggle}>
                 <BiShow />
               </span>
             )}
+            {error && <p className="error">*{error}</p>}
+            </div>
+
           </div>
           <p>
             <button className="login-button" onClick={handleClick}>

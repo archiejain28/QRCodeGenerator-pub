@@ -182,6 +182,7 @@ input[type=text]:focus{
 
 .input-container{
  display: flex;
+ flex-direction: column;
  align-items: center;
  justify-content: center;
 }
@@ -210,7 +211,10 @@ input[type=text]:focus{
   .button-space{
     margin-top: auto;
   }
-  input[type="text"]:focus{
+  input[type="text"]:focus, input[type="password"]:focus-within{
+    font-size: 25px;
+  }
+  #user-input:focus-within + span#password-field{
     font-size: 25px;
   }
   .login-auth-box{
@@ -223,10 +227,12 @@ input[type=text]:focus{
     display: none
   }
   .input-label{
-    margin: 3px;
+    margin: 15px;
   }
+
   .login-container{
     background-image: url('./scanImage.jpeg');
     background-size:contain;
   }
+
 }
