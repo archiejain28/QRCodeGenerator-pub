@@ -55,7 +55,7 @@ export default function FireBaseImageUpload({error,errorClass,setErrorClass, set
           <form>
           <div className='user-input' value={userInput} onChange={(e)=>{ setUserInput(e.target.value)}}>
           <label>Add something for Title: </label>
-          <input type='text' placeholder='Add something for Title' required/>
+          <input type='text' className='user-input-title' placeholder='Add something for Title' required/>
           </div>
           <button className='button button-space' onClick={handleClick}>Generate QR</button>
           </form>
