@@ -25,6 +25,7 @@ export default function Login({setAuthentication, error, setError}){
         setError('')
       }else{
         setError('Incorrect Password')
+        document.getElementById('user-input').style.marginTop='30px'
       }     
     }
 
@@ -33,7 +34,7 @@ export default function Login({setAuthentication, error, setError}){
         <div className="login-auth-box">
           <h1 style={{ color: "#050C9C" }}>Namaste,</h1>
           <h1 style={{ color: "#3572EF" }}>Welcome! Let's started</h1>
-          <div className="input-container">
+          <div className="input-container"  style={{ margin: "30px 0px 0px 0" }}>
             <span
               className='input-label'
               style={{ color: "#003285", fontWeight: "bold"}}
@@ -41,20 +42,21 @@ export default function Login({setAuthentication, error, setError}){
               {" "}
               Enter the credentials to login{" "}
             </span>
+            <div>
             <input
-              style={{ margin: "30px 0px 30px 0" }}
               id="user-input"
               type="password"
               value={userData}
               onChange={(e) => setUserData(e.target.value)}
             />
+            {error && <p className="error">*{error}</p>}
+            </div>
             {userData && (
               <span toggle="#password-field" onClick={handlePasswordToggle}>
                 <BiShow />
               </span>
             )}
           </div>
-          {error && <p className="error">*{error}</p>}
           <p>
             <button className="login-button" onClick={handleClick}>
               Submit

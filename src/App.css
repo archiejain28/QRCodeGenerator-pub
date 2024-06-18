@@ -60,32 +60,12 @@ section.home-section{
   font-size: x-small;
 }
 .error {
-  /* background-color: #fce4e4;
-  border: 1px solid #fcc2c3; */
-  border-radius: 7px;
+
   display: block;
   color: #cc0033;
-  /* float: left; */
+  text-align: left;
   font-weight: bold;
-  /* line-height: 24px;
-  position: relative; */
-  padding: 7px 11px 4px;
-  margin-left: 160px;
-   /* Left Arrow Styling Starts Here */
-  &:after, &:before {
-    content: '';
-    border: 7px solid transparent;
-    position: absolute;
-    top: 11px;
-  }
-  &:after {
-    border-right: 7px solid #fce4e4;
-    left: -14px;
-  }
-  &:before {
-    border-right: 7px solid #fcc2c3;
-    left: -15px;
-  }
+
 } 
 
 .input-error {
