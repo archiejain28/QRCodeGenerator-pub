@@ -17,9 +17,9 @@ const QRCodeFromImage = forwardRef(({imageData, userInput}, _ref) => {
           const doc = new JsPDF("p", "mm", "a4");
           doc.addImage(dataUrl,"PNG", 35, 40, 150, 170)
           doc.save(`${userInput}.pdf`);
-          const blobPDF = doc.output("blob");
-          const blobUrl = URL.createObjectURL(blobPDF);
-          window.open(blobUrl)
+          // const blobPDF = doc.output("blob");
+          // const blobUrl = URL.createObjectURL(blobPDF);
+          // window.open(blobUrl)
         })
         .catch((err) => {
           console.log(err);
