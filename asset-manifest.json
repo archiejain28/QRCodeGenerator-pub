@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/QRCodeGenerator-pub/static/css/main.ae5ee68e.css",
+    "main.js": "/QRCodeGenerator-pub/static/js/main.05038175.js",
+    "static/js/239.4612eb2a.chunk.js": "/QRCodeGenerator-pub/static/js/239.4612eb2a.chunk.js",
+    "static/js/213.dd0ec592.chunk.js": "/QRCodeGenerator-pub/static/js/213.dd0ec592.chunk.js",
+    "static/js/732.b3209886.chunk.js": "/QRCodeGenerator-pub/static/js/732.b3209886.chunk.js",
+    "static/media/scanImage.jpeg": "/QRCodeGenerator-pub/static/media/scanImage.9a27c73588dafcd9fe4a.jpeg",
+    "index.html": "/QRCodeGenerator-pub/index.html",
+    "main.ae5ee68e.css.map": "/QRCodeGenerator-pub/static/css/main.ae5ee68e.css.map",
+    "main.05038175.js.map": "/QRCodeGenerator-pub/static/js/main.05038175.js.map",
+    "239.4612eb2a.chunk.js.map": "/QRCodeGenerator-pub/static/js/239.4612eb2a.chunk.js.map",
+    "213.dd0ec592.chunk.js.map": "/QRCodeGenerator-pub/static/js/213.dd0ec592.chunk.js.map",
+    "732.b3209886.chunk.js.map": "/QRCodeGenerator-pub/static/js/732.b3209886.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae5ee68e.css",
+    "static/js/main.05038175.js"
+  ]
+}
