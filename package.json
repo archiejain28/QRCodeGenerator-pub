@@ -31,7 +31,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://github.com/archiejain28/QRCodeGenerator-pub",
+  "homepage": "https://archiejain28.github.io/QRCodeGenerator-pub",
   "browserslist": {
     "production": [
       ">0.2%",
