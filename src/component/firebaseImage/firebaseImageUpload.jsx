@@ -29,7 +29,7 @@ export default function FireBaseImageUpload({error,errorClass,setErrorClass, set
   }
   
   const manageFileUpload = () =>{
-    const imgRef = ref(imageDb, `files/${userInput}`)
+    const imgRef = ref(imageDb, `public/${userInput}`)
     uploadBytes(imgRef,inputRef.current.files[0]).then((value)=>{
        getDownloadURL(value.ref).then((url)=>{
         setImgURL(url)
